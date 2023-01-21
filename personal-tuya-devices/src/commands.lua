@@ -64,7 +64,7 @@ local defaults = {
     capability = "airQualitySensor",
     attribute = "airQuality",
     rate = 1,
-    reportingInterval = 1,
+    reportingInterval = 10,
     from_zigbee = function (self, value, device)
       local pref = (device:get_child_by_parent_assigned_key(string.format("%02X", self.group)) or device).preferences
       return to_number(value) / (pref.rate or self.rate)
@@ -80,7 +80,7 @@ local defaults = {
     capability = "carbonDioxideMeasurement",
     attribute = "carbonDioxide",
     rate = 1,
-    reportingInterval = 1,
+    reportingInterval = 10,
     from_zigbee = function (self, value, device)
       local pref = (device:get_child_by_parent_assigned_key(string.format("%02X", self.group)) or device).preferences
       return to_number(value) / (pref.rate or self.rate)
@@ -120,7 +120,7 @@ local defaults = {
     capability = "formaldehydeMeasurement",
     attribute = "formaldehydeLevel",
     rate = 100,
-    reportingInterval = 1,
+    reportingInterval = 10,
     from_zigbee = function (self, value, device)
       local pref = (device:get_child_by_parent_assigned_key(string.format("%02X", self.group)) or device).preferences
       return to_number(value) / (pref.rate or self.rate)
@@ -170,7 +170,7 @@ local defaults = {
     capability = "relativeHumidityMeasurement",
     attribute = "humidity",
     rate = 1,
-    reportingInterval = 2,
+    reportingInterval = 10,
     from_zigbee = function (self, value, device)
       local pref = (device:get_child_by_parent_assigned_key(string.format("%02X", self.group)) or device).preferences
       return to_number(value) / (pref.rate or self.rate)
@@ -180,7 +180,7 @@ local defaults = {
     capability = "temperatureMeasurement",
     attribute = "temperature",
     rate = 1,
-    reportingInterval = 2,
+    reportingInterval = 10,
     from_zigbee = function (self, value, device)
       local pref = (device:get_child_by_parent_assigned_key(string.format("%02X", self.group)) or device).preferences
       return to_number(value) / (pref.rate or self.rate)
@@ -190,7 +190,7 @@ local defaults = {
     capability = "tvocMeasurement",
     attribute = "tvocLevel",
     rate = 100,
-    reportingInterval = 1,
+    reportingInterval = 10,
     from_zigbee = function (self, value, device)
       local pref = (device:get_child_by_parent_assigned_key(string.format("%02X", self.group)) or device).preferences
       return to_number(value) / (pref.rate or self.rate)
